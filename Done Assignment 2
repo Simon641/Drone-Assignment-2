@@ -1,24 +1,29 @@
 from djitellopy import Tello
 from time import sleep
 
-
 tello = Tello()
+
 tello.connect()
-sleep(2)
+
 tello.takeoff()
+
+tello.send_rc_control(0, 0, 50, 0)
+sleep(3.5)
+
+tello.send_rc_control(0, 50, 0, 0)
+sleep(2.2)
+
+tello.send_rc_control(50, 0, 0, 0)
+sleep(2.2)
+
+tello.send_rc_control(0, -50, 0, 0)
+sleep(2.2)
+
+tello.send_rc_control(-50, 0, 0, 0)
+sleep(2.2)
+
+tello.send_rc_control(0, 0, 0, 0)
 sleep(2)
 
-tello.send_rc_control(0,0,50,0)
-sleep(3.5)
-tello.send_rc_control(0,50,0,0)
-sleep(3)
-tello.send_rc_control(-50,0,0,0)
-sleep(3)
-tello.send_rc_control(0,-50,0,0)
-sleep(3)
-tello.send_rc_control(50,0,0,0)
-sleep(3)
-tello.flip_forward()
-sleep(3)
 tello.land()
 tello.end()
