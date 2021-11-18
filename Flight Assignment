@@ -1,0 +1,52 @@
+from djitellopy import Tello
+from time import sleep
+
+feet=30.48
+
+tello = Tello()
+tello.connect()
+
+
+# rounds the feet times number of times
+tello.takeoff()
+
+tello.move_up(round(feet*2))
+
+tello.move_forward(round(feet*5))
+
+sleep(2)
+
+tello.rotate_counter_clockwise(90)
+
+
+tello.move_forward(round(feet*6))
+
+sleep(2)
+
+tello.rotate_clockwise(90)
+
+tello.move_down(90)
+
+
+tello.move_forward(round(feet*3))
+
+sleep(2)
+
+tello.rotate_clockwise(30)
+
+
+tello.move_forward(round(feet*3))
+
+sleep(2)
+
+tello.rotate_counter_clockwise(90)
+
+
+tello.move_forward(round(feet*6))
+
+sleep(2)
+
+tello.land()
+
+
+
