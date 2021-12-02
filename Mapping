@@ -6,14 +6,14 @@ import numpy as np
 import cv2
 import math
 
-############ PARAMETERS ############
+# PARAMETERS ###
 fSpeed = 117 / 10  # Forward Speed in cm/s (15cm/s)
 aSpeed = 360 / 10  # Angular Speed Degrees
 interval = 0.25
 
 dInterval = fSpeed * interval
 aInterval = aSpeed * interval
-####################################
+
 
 x, y = 500, 500
 a = 0
